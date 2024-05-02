@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebSocket Test</title>
+    <script>
+        // 当文档加载完毕时执行
+        document.addEventListener('DOMContentLoaded', function() {
+            // 创建WebSocket连接
+            var ws = new WebSocket("ws://localhost:8000/ws");
+
+            // 连接打开时触发
+            ws.onopen = function() {
+                console.log("WebSocket连接已打开。");
+                // 可以发送消息给服务器
+                ws.send("Hello, Server!");
+            };
+
+            // 接收到消息时触发
+            ws.onmessage = function(event) {
+                console.log("接收到消息：", event.data);
+                // 可以将接收到的消息显示在页面上
+                document.getElementById('messages').textContent += event.data + '\n';
+            };
+
+            // 发生错误时触发
+            ws.onerror = function(error) {
+                console.error("WebSocket发生错误：", error);
+            };
+
+            // 连接关闭时触发
+            ws.onclose = function() {
+                console.log("WebSocket连接已关闭。");
+            };
+        });
+    </script>
+</head>
+<body>
+    <h1>WebSocket Test</h1>
+    <p id="messages"></p>
+</body>
+</html>
