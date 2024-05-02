@@ -86,3 +86,8 @@ class FrameHandler(VideoStreamTrack):
         frame.pts = timestamp
         frame.time_base = video_timestamp_base
         return frame
+
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
