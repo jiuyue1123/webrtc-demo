@@ -20,8 +20,8 @@ FastAPI WebRTC Video Chat 是一个使用 FastAPI 和 WebRTC 技术构建的实�
 1. 克隆项目到本地：
 
 ```bash
-git clone https://github.com/yourusername/FastAPI-WebRTC-Video-Chat.git
-cd FastAPI-WebRTC-Video-Chat
+git clone https://github.com/jiuyue1123/webrtc-demo.git
+cd webrtc-demo
 ````
 
 2. 创建虚拟环境并激活：
